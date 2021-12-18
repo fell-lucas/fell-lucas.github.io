@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:portfolio/app/cubit/locale_cubit.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
@@ -10,6 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<LocaleCubit>().changeLocale(Locale(Intl.systemLocale.split('_')[0]));
     const locales = AppLocalizations.supportedLocales;
     final l10n = context.l10n;
     final appBarButtons = [
