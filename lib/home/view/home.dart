@@ -9,7 +9,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final appBarButtons = [l10n.about, l10n.education, l10n.work, l10n.projects];
+    final appBarButtons = [
+      l10n.about,
+      l10n.education,
+      l10n.work,
+      l10n.projects,
+    ];
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(

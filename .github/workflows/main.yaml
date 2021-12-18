@@ -17,16 +17,16 @@ jobs:
         run: flutter packages get
 
       - name: Format
-        run: flutter format --set-exit-if-changed lib test
+        run: flutter format --set-exit-if-changed -l 120 lib test
 
       - name: Analyze
         run: flutter analyze lib test
 
-      - name: Run tests
-        run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+      # - name: Run tests
+      #   run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
 
-      - name: Check Code Coverage
-        uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
+      # - name: Check Code Coverage
+      #   uses: VeryGoodOpenSource/very_good_coverage@v1.2.0
         
       - name: Flutter Build
         run: flutter build web --release --target=lib/main_production.dart
