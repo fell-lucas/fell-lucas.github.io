@@ -5,4 +5,6 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+export 'constants/dark_theme.dart';
+export 'constants/light_theme.dart';
 export 'view/app.dart';
