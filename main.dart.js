@@ -55183,8 +55183,8 @@ $0(){return new A.kC(B.iv,new A.a7r(),B.iv,null,t.rL)},
 $S:353}
 A.a7r.prototype={
 $1(a){var s,r=A.a7_()
-if(B.b.u(B.ed,new A.d8(r==null?$.a61="en_US":r,null))){r=A.a7_()
-r=new A.d8(r==null?$.a61="en_US":r,null)}else r=B.p2
+if(B.b.u(B.ed,new A.d8((r==null?$.a61="en_US":r).split("_")[0],null))){r=A.a7_()
+r=new A.d8((r==null?$.a61="en_US":r).split("_")[0],null)}else r=B.p2
 s=t.rn.a($.N.j(0,$.aaZ()))
 s=new A.dV(s==null?null:s.gVS(),r)
 s.Mc(r,t.oa)
