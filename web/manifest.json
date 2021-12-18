@@ -1,11 +1,11 @@
 {
-    "name": "Portfolio",
-    "short_name": "Portfolio",
+    "name": "Lucas' Portfolio",
+    "short_name": "Lucas' Portfolio",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#CFD8DC",
     "theme_color": "#CFD8DC",
-    "description": "A Very Good Project created by Very Good CLI.",
+    "description": "A showcase of my journey as a software engineering student",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
