@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:portfolio/app/app.dart';
+import 'package:portfolio/app/cubit/locale_cubit.dart';
 import 'package:portfolio/home/home.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
@@ -13,6 +15,9 @@ class App extends StatelessWidget {
       title: 'Lucas Fell',
       theme: lightThemeData,
       darkTheme: darkThemeData,
+      locale: context.select(
+        (LocaleCubit cubit) => cubit.state,
+      ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

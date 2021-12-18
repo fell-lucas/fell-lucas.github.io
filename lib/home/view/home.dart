@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio/app/cubit/locale_cubit.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,6 +10,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const locales = AppLocalizations.supportedLocales;
     final l10n = context.l10n;
     final appBarButtons = [
       l10n.about,
@@ -21,10 +24,8 @@ class HomePage extends StatelessWidget {
         actions: [
           ...List.generate(
             appBarButtons.length,
-            (index) => LeadingTextButton(
-              leading: '0${index + 1}. ',
-              text: appBarButtons[index],
-            ),
+            (index) => LeadingTextButton(leading: '0${index + 1}. ', text: appBarButtons[index]),
+            growable: false,
           ),
           Padding(
             padding: const EdgeInsets.all(8),
@@ -39,7 +40,31 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton(
+                value: context.select((LocaleCubit cubit) => cubit.state.languageCode),
+                items: [
+                  ...List.generate(
+                    locales.length,
+                    (index) => DropdownMenuItem<String>(
+                      value: locales[index].languageCode,
+                      child: Text(
+                        locales[index].languageCode,
+                        style: const TextStyle(color: Colors.deepOrange),
+                      ),
+                    ),
+                    growable: false,
+                  ),
+                ],
+                onChanged: (String? val) {
+                  context.read<LocaleCubit>().changeLocale(Locale(val!));
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
