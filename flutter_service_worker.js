@@ -7,7 +7,7 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "f3bfccc993a1e0bfdd3440af60d99df4",
 "canvaskit/profiling/canvaskit.wasm": "a9610cf39260f60fbe7524a785c66101",
 "canvaskit/canvaskit.wasm": "04ed3c745ff1dee16504be01f9623498",
-"main.dart.js": "15a588055fc9e26396e0b6a002115c52",
+"main.dart.js": "343e363ccb611de738204e998ff051a2",
 "version.json": "009c9e65172e010890f7f65fde438006",
 "splash/img/dark-background.png": "5301a31fb47dceced46ff9b717f93b9a",
 "splash/img/light-4x.png": "6d3345aed9c34604507e4999ef3b98db",
@@ -20,19 +20,19 @@ const RESOURCES = {
 "splash/img/dark-4x.png": "6d3345aed9c34604507e4999ef3b98db",
 "splash/img/light-2x.png": "a6d5ebf47fe747e1045c07b483936c74",
 "splash/style.css": "5c74776d35b9e85d790997a9f2349a2d",
-"manifest.json": "82656565115b686155e4b46e515eb144",
+"manifest.json": "a453a6f5df223462211329f823e068cd",
 "icons/favicon.ico": "608b5016b351a0905cd09d2aa9561bc1",
 "icons/icon-512-maskable.png": "17679abb2bbcad2b6a5a0ef9b1bc1e53",
 "icons/Icon-512.png": "5f1531c5df732d8df2a2186281f3b5b8",
 "icons/apple-touch-icon.png": "51bdfc918f10828ba7e4b0a6ebbeba38",
 "icons/Icon-192.png": "94fb471980e9727a83347045cdb64e79",
 "icons/icon-192-maskable.png": "483d00583701a30fe04a09fbde95e3f2",
-"assets/NOTICES": "8f7b5da5fad1065bde2bd99cf3b1446c",
+"assets/NOTICES": "ec598e15592cf7706942b3682d066888",
 "assets/AssetManifest.json": "99914b932bd37a50b983c5e7c90ae93b",
 "assets/FontManifest.json": "7b2a36307916a9721811788013e65289",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"index.html": "c6f1fa34aa1240f5feb2f737722e2719",
-"/": "c6f1fa34aa1240f5feb2f737722e2719"
+"index.html": "53df4704151b1b54c0ab8325802048d2",
+"/": "53df4704151b1b54c0ab8325802048d2"
 };
 
 // The application shell files that are downloaded before a service worker can
