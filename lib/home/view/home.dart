@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<LocaleCubit>().changeLocale(Locale(Intl.systemLocale.split('_')[0]));
     const locales = AppLocalizations.supportedLocales;
     final l10n = context.l10n;
     final appBarButtons = [
@@ -47,7 +46,11 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(8),
             child: DropdownButtonHideUnderline(
               child: DropdownButton(
-                value: context.select((LocaleCubit cubit) => cubit.state.languageCode),
+                value: context.select(
+                  (LocaleCubit cubit) => cubit.state is LocaleUpdated
+                      ? (cubit.state as LocaleUpdated).locale.languageCode
+                      : Localizations.localeOf(context).languageCode,
+                ),
                 items: [
                   ...List.generate(
                     locales.length,

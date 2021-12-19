@@ -15,7 +15,9 @@ class App extends StatelessWidget {
       title: 'Lucas Fell',
       theme: lightThemeData,
       darkTheme: darkThemeData,
-      locale: context.select((LocaleCubit cubit) => cubit.state),
+      locale: context.select(
+        (LocaleCubit cubit) => cubit.state is LocaleUpdated ? (cubit.state as LocaleUpdated).locale : null,
+      ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
