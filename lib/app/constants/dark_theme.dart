@@ -16,7 +16,7 @@ final darkThemeData = lightThemeData.copyWith(
 final darkColorScheme = ColorScheme.fromSwatch(
   backgroundColor: Colors.blueGrey.shade700,
   errorColor: Colors.red,
-  primarySwatch: MaterialColor(Colors.blueGrey.shade100.value, {}),
+  primarySwatch: MaterialColor(Colors.blueGrey.shade100.value, const {}),
   accentColor: accentColor,
   primaryColorDark: Colors.blueGrey.shade700,
   cardColor: accentColor,
