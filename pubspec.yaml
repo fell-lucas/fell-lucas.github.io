@@ -1,6 +1,6 @@
 name: portfolio
 description: A showcase of my journey as a software engineering student
-version: 1.0.0+1
+version: 1.0.1+1
 publish_to: none
 
 environment:
