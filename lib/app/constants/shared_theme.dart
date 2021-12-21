@@ -1,6 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const accentColor = Colors.deepOrange;
+
+const appBarTheme = AppBarTheme(
+  backgroundColor: Colors.transparent,
+  elevation: 0,
+);
+
+const iconTheme = IconThemeData(
+  size: 18,
+  color: accentColor,
+);
+
+final outlinedButtonTheme = OutlinedButtonThemeData(
+  style: OutlinedButton.styleFrom(
+    side: const BorderSide(
+      color: accentColor,
+    ),
+  ),
+);
+
 final textTheme = TextTheme(
   headline1: GoogleFonts.firaCode(fontSize: 98, fontWeight: FontWeight.w300, letterSpacing: -1.5),
   headline2: GoogleFonts.firaCode(fontSize: 61, fontWeight: FontWeight.w300, letterSpacing: -0.5),

@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio/app/constants/constants.dart';
 import 'package:portfolio/app/cubit/locale_cubit.dart';
+import 'package:portfolio/helpers/helpers.dart';
+import 'package:portfolio/home/widgets/widgets.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
 class HomePage extends StatelessWidget {
@@ -57,7 +61,7 @@ class HomePage extends StatelessWidget {
                       value: locales[index].languageCode,
                       child: Text(
                         locales[index].languageCode,
-                        style: const TextStyle(color: Colors.deepOrange),
+                        style: TextStyle(color: context.colorScheme.secondary),
                       ),
                     ),
                     growable: false,
@@ -71,35 +75,42 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: SafeArea(
+        child: Row(
+          children: [
+            const LeftColumn(),
+            SingleChildScrollView(
+              child: Column(),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class LeadingTextButton extends StatelessWidget {
-  const LeadingTextButton({
+class LeftColumn extends StatelessWidget {
+  const LeftColumn({
     Key? key,
-    required this.leading,
-    required this.text,
   }) : super(key: key);
-
-  final String leading;
-  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-      child: TextButton(
-        onPressed: () {},
-        child: Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(text: leading, style: const TextStyle(color: Colors.deepOrange)),
-              TextSpan(text: text),
-            ],
-          ),
-        ),
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: const [
+        SocialIcon(icon: FontAwesomeIcons.github, url: kGithub),
+        SocialIcon(icon: FontAwesomeIcons.twitter, url: kTwitter),
+        SocialIcon(icon: FontAwesomeIcons.linkedinIn, url: kLinkedIn),
+        SocialIcon(icon: FontAwesomeIcons.googlePlay, url: kPlayStore),
+        SocialIcon(icon: FontAwesomeIcons.solidEnvelope, url: kEmail),
+        SizedBox(height: 30),
+        SizedBox(
+          height: 100,
+          width: 100,
+          child: VerticalDivider(),
+        )
+      ],
     );
   }
 }
