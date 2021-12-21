@@ -1,6 +1,9 @@
-name: "format and analyze"
+name: "format-and-analyze"
 
-on: [push]
+on: 
+  push:
+    branches:
+      - "!main"
 
 jobs:
   build:
