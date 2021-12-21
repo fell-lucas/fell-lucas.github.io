@@ -98,14 +98,14 @@ class LeftColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
-      children: const [
-        SocialIcon(icon: FontAwesomeIcons.github, url: kGithub),
-        SocialIcon(icon: FontAwesomeIcons.twitter, url: kTwitter),
-        SocialIcon(icon: FontAwesomeIcons.linkedinIn, url: kLinkedIn),
-        SocialIcon(icon: FontAwesomeIcons.googlePlay, url: kPlayStore),
-        SocialIcon(icon: FontAwesomeIcons.solidEnvelope, url: kEmail),
-        SizedBox(height: 30),
-        SizedBox(
+      children: [
+        const SocialIcon(icon: FontAwesomeIcons.github, url: kGithub),
+        const SocialIcon(icon: FontAwesomeIcons.twitter, url: kTwitter),
+        const SocialIcon(icon: FontAwesomeIcons.linkedinIn, url: kLinkedIn),
+        const SocialIcon(icon: FontAwesomeIcons.googlePlay, url: kPlayStore),
+        SocialIcon(icon: FontAwesomeIcons.solidEnvelope, url: '$kEmail?${context.l10n.email}'),
+        const SizedBox(height: 30),
+        const SizedBox(
           height: 100,
           width: 100,
           child: VerticalDivider(),
