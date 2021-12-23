@@ -4,5 +4,6 @@
     "education": "Educação",
     "work": "Trabalho",
     "projects": "Projetos",
-    "resume": "Currículo"
+    "resume": "Currículo",
+    "email": "subject=Opa! Tudo certo?&body=Eu vim pelo seu site e gostaria de saber sua opinião em..."
 }
