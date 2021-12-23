@@ -54488,14 +54488,14 @@ gEW(){return"Education"},
 gHy(){return"Work"},
 gGF(){return"Projects"},
 gH7(a){return"Resume"},
-gEY(){return"?subject=Hey! What's up?&body=I just came from your website and I'd like your opinion on..."}}
+gEY(){return"subject=Hey! What's up?&body=I just came from your website and I'd like your opinion on..."}}
 A.yE.prototype={
 gDC(){return"Sobre"},
 gEW(){return"Educa\xe7\xe3o"},
 gHy(){return"Trabalho"},
 gGF(){return"Projetos"},
 gH7(a){return"Curr\xedculo"},
-gEY(){return"?subject=Opa! Tudo certo?&body=Eu vim pelo seu site e gostaria de saber sua opini\xe3o em..."}}
+gEY(){return"subject=Opa! Tudo certo?&body=Eu vim pelo seu site e gostaria de saber sua opini\xe3o em..."}}
 A.BQ.prototype={
 gU(){return"Terug"},
 gL(){return"Maak toe"},
@@ -60798,7 +60798,7 @@ B.zZ=new A.T(1/0,1/0)
 B.A_=new A.k1(0,0,null,null)
 B.Xf=new A.k1(8,null,null,null)
 B.a1j=new A.H6(null)
-B.Xg=new A.k1(100,100,B.a1j,null)
+B.Xg=new A.k1(100,125,B.a1j,null)
 B.Xh=new A.k1(null,30,null,null)
 B.Xi=new A.uV(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.A0=new A.Gh(0,0,0,0,0,0,!1,!1,null,0)
