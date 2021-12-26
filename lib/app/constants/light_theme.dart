@@ -10,6 +10,7 @@ final lightThemeData = ThemeData(
   outlinedButtonTheme: outlinedButtonTheme,
   canvasColor: Colors.blueGrey.shade50,
   brightness: Brightness.light,
+  drawerTheme: DrawerThemeData(backgroundColor: Colors.blueGrey.shade50),
 );
 
 final colorScheme = ColorScheme.fromSwatch(

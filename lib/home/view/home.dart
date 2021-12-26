@@ -4,21 +4,28 @@ import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   static const route = '/';
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: const ScaffoldDrawer(),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: FakeAppBar(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: FakeAppBar(
+                scaffoldKey: _scaffoldKey,
+              ),
             ),
             Expanded(
               child: Row(

@@ -14,6 +14,7 @@ final darkThemeData = lightThemeData.copyWith(
     color: Colors.blueGrey.shade100,
     thickness: 1,
   ),
+  drawerTheme: DrawerThemeData(backgroundColor: Colors.blueGrey.shade900),
   // splashColor: Colors.blueGrey.shade900,
 );
 

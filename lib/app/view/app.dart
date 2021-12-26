@@ -25,7 +25,7 @@ class App extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       initialRoute: HomePage.route,
       routes: {
-        HomePage.route: (context) => const HomePage(),
+        HomePage.route: (context) => HomePage(),
       },
     );
   }
