@@ -7,3 +7,4 @@ export 'resume_button.dart';
 export 'scaffold_drawer.dart';
 export 'side_column.dart';
 export 'social_icon.dart';
+export 'theme_switcher_button.dart';

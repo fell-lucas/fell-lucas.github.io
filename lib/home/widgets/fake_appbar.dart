@@ -32,7 +32,8 @@ class FakeAppBar extends StatelessWidget {
         growable: false,
       ),
       const ResumeButton(),
-      const LocaleDropdown()
+      const LocaleDropdown(),
+      const ThemeSwitcherButton()
     ];
     return Padding(
       padding: const EdgeInsets.all(8),

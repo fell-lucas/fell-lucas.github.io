@@ -1,6 +1,5 @@
 import 'package:fab_circular_menu/fab_circular_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
 
@@ -18,7 +17,6 @@ class FabMenu extends StatelessWidget {
     final colors = context.colorScheme;
     final orientation = MediaQuery.of(context).orientation;
     final ringDiameter = orientation == Orientation.landscape ? size.height * 0.4 : size.width * 0.5;
-    final themeIcon = context.isDark ? FontAwesomeIcons.solidMoon : FontAwesomeIcons.solidSun;
 
     return IconTheme(
       data: Theme.of(context).iconTheme.copyWith(color: colors.background),
@@ -32,7 +30,7 @@ class FabMenu extends StatelessWidget {
             icon: Icon(Icons.menu, color: colors.secondary),
             onPressed: () => scaffoldKey.currentState!.openDrawer(),
           ),
-          IconButton(icon: FaIcon(themeIcon, color: colors.secondary), onPressed: () {}),
+          const ThemeSwitcherButton(),
           const LocaleDropdown()
         ],
       ),

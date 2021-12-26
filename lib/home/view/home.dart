@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/app/app.dart';
@@ -13,43 +14,45 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      key: _scaffoldKey,
-      floatingActionButton: size.width < kMediumScreenWidth ? FabMenu(scaffoldKey: _scaffoldKey) : null,
-      drawer: const ScaffoldDrawer(),
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
-              child: FakeAppBar(
-                scaffoldKey: _scaffoldKey,
+    return ThemeSwitchingArea(
+      child: Scaffold(
+        key: _scaffoldKey,
+        floatingActionButton: size.width < kMediumScreenWidth ? FabMenu(scaffoldKey: _scaffoldKey) : null,
+        drawer: const ScaffoldDrawer(),
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: FakeAppBar(
+                  scaffoldKey: _scaffoldKey,
+                ),
               ),
-            ),
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  if (size.width >= kMediumScreenWidth) const SideColumn(left: true) else const SizedBox.shrink(),
-                  Expanded(
-                    child: Center(
-                      child: SingleChildScrollView(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 50),
-                          child: Column(
-                            children: const [LandingText()],
+              Expanded(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (size.width >= kMediumScreenWidth) const SideColumn(left: true) else const SizedBox.shrink(),
+                    Expanded(
+                      child: Center(
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 50),
+                            child: Column(
+                              children: const [LandingText()],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                  if (size.width >= kMediumScreenWidth) const SideColumn(left: false) else const SizedBox.shrink(),
-                ],
+                    if (size.width >= kMediumScreenWidth) const SideColumn(left: false) else const SizedBox.shrink(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
