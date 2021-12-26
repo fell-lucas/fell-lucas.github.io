@@ -12,26 +12,22 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ThemeProvider(
-      initTheme: isDarkNoContext ? darkThemeData : lightThemeData,
-      duration: const Duration(milliseconds: 1000),
-      child: MaterialApp(
-        title: 'Lucas Fell',
-        theme: lightThemeData,
-        darkTheme: darkThemeData,
-        locale: context.select(
-          (LocaleCubit cubit) => cubit.state is LocaleUpdated ? (cubit.state as LocaleUpdated).locale : null,
-        ),
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        initialRoute: HomePage.route,
-        routes: {
-          HomePage.route: (context) => HomePage(),
-        },
+    return MaterialApp(
+      title: 'Lucas Fell',
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
+      locale: context.select(
+        (LocaleCubit cubit) => cubit.state is LocaleUpdated ? (cubit.state as LocaleUpdated).locale : null,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      initialRoute: HomePage.route,
+      routes: {
+        HomePage.route: (context) => HomePage(),
+      },
     );
   }
 }
