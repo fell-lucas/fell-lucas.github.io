@@ -40,20 +40,17 @@ class SideColumn extends StatelessWidget {
               ),
             )
           ];
-    return Padding(
-      padding: left ? const EdgeInsets.only(right: 100) : const EdgeInsets.only(left: 100),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          ...children,
-          const SizedBox(height: 30),
-          const SizedBox(
-            height: 125,
-            width: 100,
-            child: VerticalDivider(),
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        ...children,
+        const SizedBox(height: 30),
+        const SizedBox(
+          height: 125,
+          width: 100,
+          child: VerticalDivider(),
+        )
+      ],
     );
   }
 }

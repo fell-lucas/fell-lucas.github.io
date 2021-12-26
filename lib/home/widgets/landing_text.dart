@@ -17,32 +17,55 @@ class LandingText extends StatelessWidget {
       color: context.colorScheme.primary.withOpacity(0.5),
       height: 1.5,
     );
-    return Text.rich(
-      TextSpan(
-        children: [
-          TextSpan(
-            text: '${l10n.intro_hiim}\n',
-            style: style.headline6!.copyWith(color: context.colorScheme.secondary),
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(l10n.intro_hiim, style: style.headline6!.copyWith(color: context.colorScheme.secondary)),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(l10n.intro_name, style: style.headline3),
+              SizedBox(
+                width: screenWidth >= kBigScreenWidth
+                    ? 1000
+                    : screenWidth >= kMediumScreenWidth
+                        ? 750
+                        : 500,
+                child: Text(
+                  l10n.intro_sub,
+                  style: style.headline3!.copyWith(
+                    color: context.colorScheme.primary.withOpacity(0.6),
+                  ),
+                ),
+              ),
+            ],
           ),
-          TextSpan(text: '${l10n.intro_name}\n', style: style.headline3),
-          TextSpan(
-            text: '${l10n.intro_sub}\n\n',
-            style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
+        ),
+        SizedBox(
+          width: 450,
+          child: Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(text: l10n.intro_desc, style: paragraphStyle),
+                TextSpan(
+                  text: l10n.intro_z_name1,
+                  style: style.bodyText1!.copyWith(color: context.colorScheme.secondary, fontWeight: FontWeight.bold),
+                  recognizer: TapGestureRecognizer()..onTap = () => launch('$kZallpy${l10n.intro_z_link1}'),
+                ),
+                TextSpan(
+                  text: l10n.intro_z_name2,
+                  style: style.bodyText1!.copyWith(color: context.colorScheme.secondary.withOpacity(0.7)),
+                  recognizer: TapGestureRecognizer()..onTap = () => launch('$kZallpy${l10n.intro_z_link2}'),
+                ),
+                TextSpan(text: '.', style: paragraphStyle),
+              ],
+            ),
           ),
-          TextSpan(text: l10n.intro_desc, style: paragraphStyle),
-          TextSpan(
-            text: l10n.intro_z_name1,
-            style: style.bodyText1!.copyWith(color: context.colorScheme.secondary, fontWeight: FontWeight.bold),
-            recognizer: TapGestureRecognizer()..onTap = () => launch('$kZallpy${l10n.intro_z_link1}'),
-          ),
-          TextSpan(
-            text: l10n.intro_z_name2,
-            style: style.bodyText1!.copyWith(color: context.colorScheme.secondary.withOpacity(0.7)),
-            recognizer: TapGestureRecognizer()..onTap = () => launch('$kZallpy${l10n.intro_z_link2}'),
-          ),
-          TextSpan(text: '.', style: paragraphStyle),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

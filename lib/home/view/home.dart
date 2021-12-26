@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/app/app.dart';
 
 import 'package:portfolio/home/widgets/widgets.dart';
 
@@ -9,25 +10,34 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const FakeAppBar(),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              child: FakeAppBar(),
+            ),
             Expanded(
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SideColumn(left: true),
+                  if (width >= kMediumScreenWidth) const SideColumn(left: true) else const SizedBox.shrink(),
                   Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [LandingText()],
+                    child: Center(
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50),
+                          child: Column(
+                            children: const [LandingText()],
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                  const SideColumn(left: false),
+                  if (width >= kMediumScreenWidth) const SideColumn(left: false) else const SizedBox.shrink(),
                 ],
               ),
             ),
