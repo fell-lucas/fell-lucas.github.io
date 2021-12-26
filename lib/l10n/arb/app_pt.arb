@@ -5,5 +5,13 @@
     "work": "Trabalho",
     "projects": "Projetos",
     "resume": "Currículo",
-    "email": "subject=Opa! Tudo certo?&body=Eu vim pelo seu site e gostaria de saber sua opinião em..."
+    "email": "subject=Opa! Tudo certo?&body=Eu vim pelo seu site e gostaria de saber sua opinião em...",
+    "intro_hiim": "Oi, sou o",
+    "intro_name": "Lucas Fell.",
+    "intro_sub": "Eu resolvo problemas com a tecnologia.",
+    "intro_desc": "Sou um estudante de engenharia de software\ncom paixão por criar soluções inteligentes,\nlimpas e bem arquitetadas.\nAtualmente na ",
+    "intro_z_name1": "Zallpy Digital",
+    "intro_z_name2": "/Automotiva",
+    "intro_z_link1": "/pt",
+    "intro_z_link2": "/pt/cases"
 }

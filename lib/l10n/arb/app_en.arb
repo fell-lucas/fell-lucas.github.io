@@ -5,5 +5,13 @@
     "work": "Work",
     "projects": "Projects",
     "resume": "Resume",
-    "email": "subject=Hey! What's up?&body=I just came from your website and I'd like your opinion on..."
+    "email": "subject=Hey! What's up?&body=I just came from your website and I'd like your opinion on...",
+    "intro_hiim": "Hi, I'm",
+    "intro_name": "Lucas Fell.",
+    "intro_sub": "I solve problems with tech.",
+    "intro_desc": "I'm a software engineering student\nwith a passion for building clean,\nwell-architected software solutions.\nCurrently at ",
+    "intro_z_name1": "Zallpy Digital",
+    "intro_z_name2": "/Automotive",
+    "intro_z_link1": "/en",
+    "intro_z_link2": "/en/cases"
 }
