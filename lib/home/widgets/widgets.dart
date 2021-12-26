@@ -1,3 +1,4 @@
+export 'fab_menu.dart';
 export 'fake_appbar.dart';
 export 'landing_text.dart';
 export 'leading_text.dart';

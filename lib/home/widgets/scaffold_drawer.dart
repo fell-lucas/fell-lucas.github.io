@@ -46,10 +46,6 @@ class ScaffoldDrawer extends StatelessWidget {
                 ],
               ),
               onTap: () {},
-            ),
-            ListTile(
-              title: const Center(child: LocaleDropdown()),
-              onTap: () {},
             )
           ],
         ),

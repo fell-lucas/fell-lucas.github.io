@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
@@ -35,9 +34,6 @@ class FakeAppBar extends StatelessWidget {
       const ResumeButton(),
       const LocaleDropdown()
     ];
-    final smallScreenChildren = [
-      IconButton(onPressed: () => scaffoldKey.currentState!.openDrawer(), icon: const FaIcon(FontAwesomeIcons.bars)),
-    ];
     return Padding(
       padding: const EdgeInsets.all(8),
       child: Wrap(
@@ -45,7 +41,7 @@ class FakeAppBar extends StatelessWidget {
         alignment: WrapAlignment.center,
         spacing: 10,
         runSpacing: 10,
-        children: screenWidth >= kMediumScreenWidth ? bigScreenChildren : smallScreenChildren,
+        children: screenWidth >= kMediumScreenWidth ? bigScreenChildren : [],
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/app/app.dart';
 
+import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -11,10 +11,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       key: _scaffoldKey,
+      floatingActionButton: size.width < kMediumScreenWidth ? FabMenu(scaffoldKey: _scaffoldKey) : null,
       drawer: const ScaffoldDrawer(),
       body: SafeArea(
         child: Column(
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (width >= kMediumScreenWidth) const SideColumn(left: true) else const SizedBox.shrink(),
+                  if (size.width >= kMediumScreenWidth) const SideColumn(left: true) else const SizedBox.shrink(),
                   Expanded(
                     child: Center(
                       child: SingleChildScrollView(
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (width >= kMediumScreenWidth) const SideColumn(left: false) else const SizedBox.shrink(),
+                  if (size.width >= kMediumScreenWidth) const SideColumn(left: false) else const SizedBox.shrink(),
                 ],
               ),
             ),
