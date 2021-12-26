@@ -4,7 +4,7 @@
     "start_url": ".",
     "display": "standalone",
     "background_color": "#CFD8DC",
-    "theme_color": "#CFD8DC",
+    "theme_color": "#FF5722",
     "description": "A showcase of my journey as a software engineering student",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
