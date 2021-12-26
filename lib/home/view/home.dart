@@ -23,64 +23,79 @@ class HomePage extends StatelessWidget {
       l10n.projects,
     ];
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        actions: [
-          ...List.generate(
-            appBarButtons.length,
-            (index) => LeadingTextButton(leading: '0${index + 1}. ', text: appBarButtons[index]),
-            growable: false,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: OutlinedButton(
-              onPressed: () {},
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Wrap(
+                clipBehavior: Clip.hardEdge,
+                alignment: WrapAlignment.center,
+                spacing: 10,
+                runSpacing: 10,
                 children: [
-                  const Icon(Icons.download_rounded),
-                  const SizedBox(width: 8),
-                  Text(l10n.resume),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton(
-                value: context.select(
-                  (LocaleCubit cubit) => cubit.state is LocaleUpdated
-                      ? (cubit.state as LocaleUpdated).locale.languageCode
-                      : Localizations.localeOf(context).languageCode,
-                ),
-                items: [
                   ...List.generate(
-                    locales.length,
-                    (index) => DropdownMenuItem<String>(
-                      value: locales[index].languageCode,
-                      child: Text(
-                        locales[index].languageCode,
-                        style: TextStyle(color: context.colorScheme.secondary),
-                      ),
-                    ),
+                    appBarButtons.length,
+                    (index) => LeadingTextButton(leading: '0${index + 1}. ', text: appBarButtons[index]),
                     growable: false,
                   ),
+                  OutlinedButton(
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.download_rounded),
+                        const SizedBox(width: 8),
+                        Text(l10n.resume),
+                      ],
+                    ),
+                  ),
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                      isDense: true,
+                      icon: const Visibility(
+                        visible: false,
+                        child: Icon(Icons.arrow_downward),
+                      ),
+                      value: context.select(
+                        (LocaleCubit cubit) => cubit.state is LocaleUpdated
+                            ? (cubit.state as LocaleUpdated).locale.languageCode
+                            : Localizations.localeOf(context).languageCode,
+                      ),
+                      items: [
+                        ...List.generate(
+                          locales.length,
+                          (index) => DropdownMenuItem<String>(
+                            alignment: Alignment.center,
+                            value: locales[index].languageCode,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                              child: Text(
+                                locales[index].languageCode,
+                                style: TextStyle(color: context.colorScheme.secondary),
+                              ),
+                            ),
+                          ),
+                          growable: false,
+                        ),
+                      ],
+                      onChanged: (String? val) {
+                        context.read<LocaleCubit>().changeLocale(Locale(val!));
+                      },
+                    ),
+                  ),
                 ],
-                onChanged: (String? val) {
-                  context.read<LocaleCubit>().changeLocale(Locale(val!));
-                },
               ),
             ),
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: Row(
-          children: [
-            const LeftColumn(),
-            SingleChildScrollView(
-              child: Column(),
+            Row(
+              children: [
+                const LeftColumn(),
+                SingleChildScrollView(
+                  child: Column(),
+                ),
+              ],
             ),
           ],
         ),

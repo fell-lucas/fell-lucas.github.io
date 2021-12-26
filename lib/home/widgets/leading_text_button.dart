@@ -13,17 +13,14 @@ class LeadingTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-      child: TextButton(
-        onPressed: () {},
-        child: Text.rich(
-          TextSpan(
-            children: [
-              TextSpan(text: leading, style: TextStyle(color: context.colorScheme.secondary)),
-              TextSpan(text: text),
-            ],
-          ),
+    return TextButton(
+      onPressed: () {},
+      child: Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(text: leading, style: TextStyle(color: context.colorScheme.secondary)),
+            TextSpan(text: text),
+          ],
         ),
       ),
     );
