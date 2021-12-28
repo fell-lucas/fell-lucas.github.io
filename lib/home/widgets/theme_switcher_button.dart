@@ -11,15 +11,14 @@ class ThemeSwitcherButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentThemeMode = context.select((ThemeCubit cubit) => cubit.state);
+    final isDark = context.select((ThemeCubit cubit) => cubit.state) == ThemeMode.dark ||
+        Theme.of(context).brightness == Brightness.dark;
     return TextButton(
       child: FaIcon(
-        currentThemeMode == ThemeMode.light ? FontAwesomeIcons.solidMoon : FontAwesomeIcons.solidSun,
+        isDark ? FontAwesomeIcons.solidSun : FontAwesomeIcons.solidMoon,
         color: context.colorScheme.secondary,
       ),
-      onPressed: () => context
-          .read<ThemeCubit>()
-          .changeTheme(currentThemeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light),
+      onPressed: () => context.read<ThemeCubit>().changeTheme(isDark ? ThemeMode.light : ThemeMode.dark),
     );
   }
 }
