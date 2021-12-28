@@ -19,7 +19,7 @@ class FabMenu extends StatelessWidget {
     return IconTheme(
       data: Theme.of(context).iconTheme.copyWith(color: colors.background),
       child: FabCircularMenu(
-        ringColor: colors.primary.withOpacity(0.2),
+        ringColor: colors.secondary.withOpacity(0.2),
         fabColor: colors.secondary,
         ringDiameter: ringDiameter,
         ringWidth: ringDiameter * 0.2,
