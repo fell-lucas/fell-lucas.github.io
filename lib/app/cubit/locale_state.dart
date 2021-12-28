@@ -6,8 +6,6 @@ abstract class LocaleState {}
 class LocaleInitial extends LocaleState {}
 
 class LocaleUpdated extends LocaleState {
-  LocaleUpdated({
-    required this.locale,
-  });
+  LocaleUpdated({required this.locale});
   final Locale locale;
 }

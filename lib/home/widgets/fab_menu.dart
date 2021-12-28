@@ -15,8 +15,7 @@ class FabMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final colors = context.colorScheme;
-    final orientation = MediaQuery.of(context).orientation;
-    final ringDiameter = orientation == Orientation.landscape ? size.height * 0.4 : size.width * 0.5;
+    final ringDiameter = size.width * 0.9;
 
     return IconTheme(
       data: Theme.of(context).iconTheme.copyWith(color: colors.background),
@@ -24,7 +23,8 @@ class FabMenu extends StatelessWidget {
         ringColor: colors.primary.withOpacity(0.2),
         fabColor: colors.secondary,
         ringDiameter: ringDiameter,
-        ringWidth: ringDiameter * 0.25,
+        ringWidth: ringDiameter * 0.2,
+        animationDuration: const Duration(milliseconds: 500),
         children: [
           IconButton(
             icon: Icon(Icons.menu, color: colors.secondary),
