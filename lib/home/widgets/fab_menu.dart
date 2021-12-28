@@ -13,9 +13,8 @@ class FabMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     final colors = context.colorScheme;
-    final ringDiameter = size.width * 0.9;
+    final ringDiameter = context.screenSize.width * 0.9;
 
     return IconTheme(
       data: Theme.of(context).iconTheme.copyWith(color: colors.background),

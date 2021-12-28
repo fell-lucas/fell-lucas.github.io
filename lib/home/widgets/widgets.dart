@@ -8,3 +8,4 @@ export 'scaffold_drawer.dart';
 export 'side_column.dart';
 export 'social_icon.dart';
 export 'theme_switcher_button.dart';
+export 'wip_banner.dart';

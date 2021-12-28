@@ -17,7 +17,6 @@ class LandingText extends StatelessWidget {
       color: context.colorScheme.primary.withOpacity(0.5),
       height: 1.5,
     );
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -29,9 +28,9 @@ class LandingText extends StatelessWidget {
             children: [
               Text(l10n.intro_name, style: style.headline3),
               SizedBox(
-                width: screenWidth >= kBigScreenWidth
+                width: context.screenSize.width >= kBigScreenWidth
                     ? 1000
-                    : screenWidth >= kMediumScreenWidth
+                    : context.screenSize.width >= kMediumScreenWidth
                         ? 750
                         : 500,
                 child: Text(

@@ -5,16 +5,10 @@ import 'package:portfolio/home/widgets/widgets.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
 class FakeAppBar extends StatelessWidget {
-  const FakeAppBar({
-    Key? key,
-    required this.scaffoldKey,
-  }) : super(key: key);
-
-  final GlobalKey<ScaffoldState> scaffoldKey;
+  const FakeAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     final l10n = context.l10n;
     final appBarButtons = [
       l10n.about,
@@ -35,14 +29,16 @@ class FakeAppBar extends StatelessWidget {
       const LocaleDropdown(),
       const ThemeSwitcherButton()
     ];
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Wrap(
-        clipBehavior: Clip.hardEdge,
-        alignment: WrapAlignment.center,
-        spacing: 10,
-        runSpacing: 10,
-        children: screenWidth >= kMediumScreenWidth ? bigScreenChildren : [],
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Wrap(
+          clipBehavior: Clip.hardEdge,
+          alignment: WrapAlignment.center,
+          spacing: 10,
+          runSpacing: 10,
+          children: context.screenSize.width >= kMediumScreenWidth ? bigScreenChildren : [],
+        ),
       ),
     );
   }
