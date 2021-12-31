@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/app/app.dart';
@@ -21,21 +22,11 @@ class LandingText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(l10n.intro_hiim, style: style.headline6!.copyWith(color: context.colorScheme.secondary)),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(l10n.intro_name, style: style.headline3),
-              SizedBox(
-                width: context.screenSize.width * 0.7,
-                child: Text(
-                  l10n.intro_sub,
-                  style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
-                ),
-              ),
-            ],
-          ),
+        Text(l10n.intro_name, style: style.headline3),
+        AutoSizeText(
+          l10n.intro_sub,
+          style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
+          maxLines: 2,
         ),
         SizedBox(
           width: 450,
