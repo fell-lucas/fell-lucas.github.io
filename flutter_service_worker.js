@@ -7,7 +7,7 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "f3bfccc993a1e0bfdd3440af60d99df4",
 "canvaskit/profiling/canvaskit.wasm": "a9610cf39260f60fbe7524a785c66101",
 "canvaskit/canvaskit.wasm": "04ed3c745ff1dee16504be01f9623498",
-"main.dart.js": "337ece06e193abee21b40e363c215b09",
+"main.dart.js": "98e9057839464d195502c7a4625658ca",
 "version.json": "23c97a6fecf585f83faea568789a0bd1",
 "splash/img/dark-background.png": "5301a31fb47dceced46ff9b717f93b9a",
 "splash/img/light-4x.png": "6d3345aed9c34604507e4999ef3b98db",
@@ -27,15 +27,15 @@ const RESOURCES = {
 "icons/apple-touch-icon.png": "51bdfc918f10828ba7e4b0a6ebbeba38",
 "icons/Icon-192.png": "94fb471980e9727a83347045cdb64e79",
 "icons/icon-192-maskable.png": "483d00583701a30fe04a09fbde95e3f2",
-"assets/NOTICES": "26c5f60653b13ec8a7712a908018559c",
+"assets/NOTICES": "c304346f8439db137a71474c7fa0184a",
 "assets/AssetManifest.json": "e26ab0f0a9ebee8025260de29a88a4ca",
 "assets/FontManifest.json": "3ddd9b2ab1c2ae162d46e3cc7b78ba88",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "b37ae0f14cbc958316fac4635383b6e8",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
-"index.html": "81bb540b4788fbc5d8ed4826a6183283",
-"/": "81bb540b4788fbc5d8ed4826a6183283"
+"index.html": "bdef01b341fe646c499bcc2d0bf824e7",
+"/": "bdef01b341fe646c499bcc2d0bf824e7"
 };
 
 // The application shell files that are downloaded before a service worker can
