@@ -7,7 +7,7 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "f3bfccc993a1e0bfdd3440af60d99df4",
 "canvaskit/profiling/canvaskit.wasm": "a9610cf39260f60fbe7524a785c66101",
 "canvaskit/canvaskit.wasm": "04ed3c745ff1dee16504be01f9623498",
-"main.dart.js": "5504c90c6398de1ac33f619979a507a3",
+"main.dart.js": "337ece06e193abee21b40e363c215b09",
 "version.json": "23c97a6fecf585f83faea568789a0bd1",
 "splash/img/dark-background.png": "5301a31fb47dceced46ff9b717f93b9a",
 "splash/img/light-4x.png": "6d3345aed9c34604507e4999ef3b98db",
@@ -34,8 +34,8 @@ const RESOURCES = {
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "b37ae0f14cbc958316fac4635383b6e8",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "5178af1d278432bec8fc830d50996d6f",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "aa1ec80f1b30a51d64c72f669c1326a7",
-"index.html": "790371cfbbb273fa4e1550d861991617",
-"/": "790371cfbbb273fa4e1550d861991617"
+"index.html": "81bb540b4788fbc5d8ed4826a6183283",
+"/": "81bb540b4788fbc5d8ed4826a6183283"
 };
 
 // The application shell files that are downloaded before a service worker can
