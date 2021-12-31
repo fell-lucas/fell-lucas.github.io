@@ -28,16 +28,10 @@ class LandingText extends StatelessWidget {
             children: [
               Text(l10n.intro_name, style: style.headline3),
               SizedBox(
-                width: context.screenSize.width >= kBigScreenWidth
-                    ? 1000
-                    : context.screenSize.width >= kMediumScreenWidth
-                        ? 750
-                        : 500,
+                width: context.screenSize.width * 0.7,
                 child: Text(
                   l10n.intro_sub,
-                  style: style.headline3!.copyWith(
-                    color: context.colorScheme.primary.withOpacity(0.6),
-                  ),
+                  style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
                 ),
               ),
             ],

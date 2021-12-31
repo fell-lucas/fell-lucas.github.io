@@ -1,8 +1,8 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -14,7 +14,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      floatingActionButton: context.screenSize.width < kMediumScreenWidth ? FabMenu(scaffoldKey: _scaffoldKey) : null,
+      floatingActionButton: context.isSmallScreen
+          ? FadeInRight(
+              delay: kAnimationDelays[0],
+              child: FabMenu(scaffoldKey: _scaffoldKey),
+            )
+          : null,
       drawer: const ScaffoldDrawer(),
       body: SafeArea(
         child: Column(
@@ -29,7 +34,10 @@ class HomePage extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (context.screenSize.width >= kMediumScreenWidth) const SideColumn(left: true) else ...[],
+                  if (context.isMediumOrBigScreen)
+                    FadeInLeft(delay: kAnimationDelays[7], child: const SideColumn(left: true))
+                  else
+                    ...[],
                   Expanded(
                     child: Center(
                       child: SingleChildScrollView(
@@ -42,11 +50,14 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (context.screenSize.width >= kMediumScreenWidth) const SideColumn(left: false) else ...[],
+                  if (context.isMediumOrBigScreen)
+                    FadeInRight(delay: kAnimationDelays[8], child: const SideColumn(left: false))
+                  else
+                    ...[],
                 ],
               ),
             ),
-            const WIPBanner(),
+            FadeInUp(delay: kAnimationDelays[context.isSmallScreen ? 1 : 9], child: const WIPBanner()),
           ],
         ),
       ),

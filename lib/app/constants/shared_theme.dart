@@ -39,3 +39,5 @@ final textTheme = TextTheme(
 
 const kBigScreenWidth = 1200;
 const kMediumScreenWidth = 700;
+const kAnimationDelayInitial = 250;
+final kAnimationDelays = List.generate(20, (index) => Duration(milliseconds: kAnimationDelayInitial + index * 200));
