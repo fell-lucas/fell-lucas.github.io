@@ -38,6 +38,7 @@ final textTheme = TextTheme(
 );
 
 const kBigScreenWidth = 1200;
-const kMediumScreenWidth = 700;
+const kMediumScreenWidth = 768; // tablet
+
 const kAnimationDelayInitial = 250;
 final kAnimationDelays = List.generate(20, (index) => Duration(milliseconds: kAnimationDelayInitial + index * 200));

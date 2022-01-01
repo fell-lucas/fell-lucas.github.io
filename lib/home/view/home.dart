@@ -26,18 +26,14 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: FakeAppBar(),
-            ),
+            if (context.isMediumOrBigScreen)
+              const Padding(padding: EdgeInsets.symmetric(horizontal: 50), child: FakeAppBar()),
             Expanded(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (context.isMediumOrBigScreen)
-                    FadeInLeft(delay: kAnimationDelays[7], child: const SideColumn(left: true))
-                  else
-                    ...[],
+                    FadeInLeft(delay: kAnimationDelays[7], child: const SideColumn(left: true)),
                   Expanded(
                     child: Center(
                       child: SingleChildScrollView(
@@ -52,8 +48,6 @@ class HomePage extends StatelessWidget {
                   ),
                   if (context.isMediumOrBigScreen)
                     FadeInRight(delay: kAnimationDelays[8], child: const SideColumn(left: false))
-                  else
-                    ...[],
                 ],
               ),
             ),

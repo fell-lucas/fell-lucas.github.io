@@ -22,7 +22,11 @@ class LandingText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(l10n.intro_hiim, style: style.headline6!.copyWith(color: context.colorScheme.secondary)),
-        Text(l10n.intro_name, style: style.headline3),
+        AutoSizeText(
+          l10n.intro_name,
+          style: style.headline3,
+          maxLines: 1,
+        ),
         AutoSizeText(
           l10n.intro_sub,
           style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
