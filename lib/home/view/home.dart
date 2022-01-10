@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
 import 'package:portfolio/app/app.dart';
@@ -14,12 +13,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      floatingActionButton: context.isSmallScreen
-          ? FadeInRight(
-              delay: kAnimationDelays[0],
-              child: FabMenu(scaffoldKey: _scaffoldKey),
-            )
-          : null,
+      floatingActionButton: context.isSmallScreen ? FabMenu(scaffoldKey: _scaffoldKey) : null,
       drawer: const ScaffoldDrawer(),
       body: SafeArea(
         child: Column(
@@ -32,26 +26,24 @@ class HomePage extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (context.isMediumOrBigScreen)
-                    FadeInLeft(delay: kAnimationDelays[7], child: const SideColumn(left: true)),
+                  if (context.isMediumOrBigScreen) const SideColumn(left: true),
                   Expanded(
                     child: Center(
                       child: SingleChildScrollView(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 50),
                           child: Column(
-                            children: const [LandingText()],
+                            children: const [Center(child: LandingText())],
                           ),
                         ),
                       ),
                     ),
                   ),
-                  if (context.isMediumOrBigScreen)
-                    FadeInRight(delay: kAnimationDelays[8], child: const SideColumn(left: false))
+                  if (context.isMediumOrBigScreen) const SideColumn(left: false),
                 ],
               ),
             ),
-            FadeInUp(delay: kAnimationDelays[context.isSmallScreen ? 1 : 9], child: const WIPBanner()),
+            const WIPBanner(),
           ],
         ),
       ),

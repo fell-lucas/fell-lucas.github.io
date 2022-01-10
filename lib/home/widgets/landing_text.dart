@@ -27,10 +27,13 @@ class LandingText extends StatelessWidget {
           style: style.headline3,
           maxLines: 1,
         ),
-        AutoSizeText(
-          l10n.intro_sub,
-          style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
-          maxLines: 2,
+        SizedBox(
+          width: 800,
+          child: AutoSizeText(
+            l10n.intro_sub,
+            style: style.headline3!.copyWith(color: context.colorScheme.primary.withOpacity(0.6)),
+            maxLines: 2,
+          ),
         ),
         SizedBox(
           width: 450,

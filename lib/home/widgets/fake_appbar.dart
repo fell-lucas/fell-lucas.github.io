@@ -1,7 +1,5 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 
-import 'package:portfolio/app/app.dart';
 import 'package:portfolio/home/widgets/widgets.dart';
 import 'package:portfolio/l10n/l10n.dart';
 
@@ -23,18 +21,15 @@ class FakeAppBar extends StatelessWidget {
           children: [
             ...List.generate(
               appBarButtons.length,
-              (index) => FadeInDown(
-                delay: kAnimationDelays[index],
-                child: TextButton(
-                  onPressed: () {},
-                  child: LeadingText(leading: '0${index + 1}. ', text: appBarButtons[index]),
-                ),
+              (index) => TextButton(
+                onPressed: () {},
+                child: LeadingText(leading: '0${index + 1}. ', text: appBarButtons[index]),
               ),
               growable: false,
             ),
-            FadeInDown(delay: kAnimationDelays[4], child: const ResumeButton()),
-            FadeInDown(delay: kAnimationDelays[5], child: const LocaleDropdown()),
-            FadeInDown(delay: kAnimationDelays[6], child: const ThemeSwitcherButton()),
+            const ResumeButton(),
+            const LocaleDropdown(),
+            const ThemeSwitcherButton(),
           ],
         ),
       ),
